@@ -14,18 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import include, url, handler400, handler403, handler404, handler500
+from django.conf.urls import include, url
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('blog.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+
 handler404 = 'blog.views.error_404_view'
 handler403 = 'blog.views.error_403_view'
 handler400 = 'blog.views.error_400_view'
 handler500 = 'blog.views.error_500_view'
-
