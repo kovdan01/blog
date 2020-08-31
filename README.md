@@ -6,8 +6,9 @@ It is powered with Django + uWSGI + nginx. However, if you don't want to face wi
 
 ## How to run
 
-1. Redirect data from port 80 to port 3000:
+0. Clone this repository and set your django secret key in `mysite/settings.py`.
 
+1. Redirect data from port 80 to port 3000:
 ```
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
 ```
@@ -66,13 +67,18 @@ workers = 1
 plugins = python3
 ```
 
-3. Restart services:
+3. Collect static files (assuming current directory is this repository root):
+```
+python3 manage.py collectstatic
+```
+
+4. Restart services:
 ```
 service uwsgi restart
 service nginx restart
 ```
 
-4. Bonus: SSL-cert adding guide: https://www.reg.ru/support/ssl-sertifikaty/ustanovka-ssl-sertifikata/ustanovka-ssl-sertifikata-na-nginx
+5. Bonus: SSL-cert adding guide: https://www.reg.ru/support/ssl-sertifikaty/ustanovka-ssl-sertifikata/ustanovka-ssl-sertifikata-na-nginx
 
 ## How to run (without nginx)
 
