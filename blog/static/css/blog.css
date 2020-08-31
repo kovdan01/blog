@@ -1,0 +1,63 @@
+.post h2
+{
+    font-family: 'Roboto Slab', serif;
+    font-size: 28px;
+    margin: 0;
+}
+.post h1
+{
+    font-family: 'Roboto Slab', serif;
+    font-size: 32px;
+    margin: 0;
+}
+.post .date
+{
+    margin: 0;
+}
+.back-to-blog i.material-icons
+{
+    font-size: 30px;
+}
+.back-to-blog
+{
+    margin: 10px 0;
+}
+.no-margin
+{
+    margin: 0;
+}
+h2.tag-search
+{
+    font-size: 20px;
+}
+.post-tags
+{
+    margin-top: 5px;
+}
+.post-visible
+{
+    display: block;
+}
+.post-disabled
+{
+    display: none;
+}
+.comments
+{
+    margin-top: 0px;
+    padding-top: 10px;
+}
+.comments h2.comments-header
+{
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.with-comments
+{
+    margin-top: 0px;
+}
+.with-post
+{
+    margin-bottom: 0px;
+}

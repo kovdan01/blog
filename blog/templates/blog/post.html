@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% block head %}
+{% load static %}
+<script type="text/javascript" src="{% static 'js/syntaxhighlighter.js' %}"></script>
+<link type="text/css" rel="stylesheet" href="{% static 'css/syntaxhighlighter.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<title>{{ post.title }} &#8211; Даниил Ковалев</title>
+{% endblock %}
+{% block content %}
+<div class="row no-margin">
+    <div class="col s12 m12 l12 xl12">
+        <div class="back-to-blog">
+            <a href="{% url 'blog' %}" class="waves-effect white grey-text text-darken-4 btn"><i class="material-icons left">chevron_left</i>Назад к списку постов</a>
+        </div>
+    </div>
+</div>
+<div class="row with-post">
+    <div class="col s12 m12 l12 xl12">
+        <div class="card-panel post">
+            <div class="date">
+                <p>Опубликовано: {{ post.published_date }}</p>
+            </div>
+            <h1>
+                <a href="{% url 'post' pk=post.pk %}">{{ post.title }}</a>
+            </h1>
+            <div class="post-tags">
+                {{post.tags}}
+            </div>
+            {{ post.text|safe|truncatechars_html:1000 }}
+        </div>
+    </div>
+</div>
+<div class="row with-comments">
+    <div class="col s12 m12 l12 xl12">
+        <div class="card-panel comments">
+            <h2 class="comments-header">Комментарии</h2>
+            <div id="vk_comments"></div> 
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/post-tags.js' %}"></script>
+<script src="https://vk.com/js/api/openapi.js?159" type="text/javascript"></script>
+<script type="text/javascript"> 
+    VK.init({ 
+      apiId: 6672370, 
+      onlyWidgets: true 
+    }); 
+</script>
+<script type="text/javascript"> 
+    VK.Widgets.Comments('vk_comments', {limit: 5, mini: "1", autoPublish: 0}); 
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block head %}
+<title>Резюме &#8211; Даниил Ковалев</title>
+{% load static %}
+{% endblock %}
+                    {% block content %}
+                    <div class="row">
+                        <div class="col s12 m12 l12 xl12">
+                            <div class="card-panel default-block" id="index">
+                                <h1 class="default-header">Резюме</h1>
+                                <p><a href="{% static 'docs/KovalevCV_ru.pdf' %}">Русская версия</a></p>
+                                <p><a href="{% static 'docs/KovalevCV_en.pdf' %}">English version</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock %}

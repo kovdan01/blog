@@ -1,0 +1,232 @@
+html 
+{
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+body
+{
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+main
+{
+    flex: 1 0 auto;
+}
+.brand-logo
+{
+    font-family: 'Roboto Slab', serif;
+}
+.list-inline 
+{
+    padding-left: 0px;
+    padding-top: 5px;
+    margin-left: -5px;
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.list-inline > li 
+{
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.page-footer
+{
+    padding-top: 10px;
+}
+.footer-copyright
+{
+    margin-top: -20px;
+}
+.col-footer
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+footer li
+{
+    display: table-cell;
+    line-height: 100%;
+    text-align: center;
+}
+footer li img
+{
+    vertical-align: middle;
+}
+footer li i
+{
+    vertical-align: middle;
+}
+.footer-icons
+{
+    font-size: 22px;
+}
+footer li span
+{
+    vertical-align: middle;
+}
+#index
+{
+    font-size: 18px;
+}
+#index i.material-icons
+{
+    font-size: 15px;
+}
+#photo
+{
+    height: 56px;
+    vertical-align: middle;
+    margin-top: -7px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-right: 7px;
+}
+.default-header
+{
+    font-size: 32px;
+}
+.default-block
+{
+    font-size: 18px;
+}
+.previous
+{
+    color: #9e9e9e;
+}
+.previous:hover
+{
+    color: #616161;
+}
+.container
+{
+    margin:0 auto;
+    max-width:1000px;
+    width:90%
+}
+@media only screen and (min-width: 601px)
+{
+    .container
+    {
+        width:75%
+    }
+}
+@media only screen and (min-width: 993px)
+{
+    .container
+    {
+        width:60%
+    }
+}
+.brand-logo span.short
+{
+    display: none;
+}
+.brand-logo span.full
+{
+    font-size: 36px;
+}
+@media only screen and (max-width: 750px)
+{
+    .brand-logo span.full
+    {
+        font-size: 36px;
+        display: block;
+    }
+    .brand-logo span.short
+    {
+        display: none;
+    }
+}
+@media only screen and (max-width: 500px)
+{
+    .brand-logo span.full
+    {
+        font-size: 36px; display: block;
+    }
+    .brand-logo span.short
+    {
+        display: none;
+    }
+    nav .button-collapse
+    {
+        margin: 0 10px;
+    }
+    nav i.material-icons
+    {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 410px)
+{
+    .brand-logo span.full
+    {
+        font-size: 36px; 
+        display: block;
+    }
+    .brand-logo span.short
+    {
+        display: none;
+    }
+    nav .button-collapse
+    {
+        margin: 0 5px;
+    }
+    nav i.material-icons
+    {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 330px)
+{
+    .brand-logo span.full
+    {
+        font-size: 32px; 
+        display: block;
+    }
+    .brand-logo span.short
+    {
+        display: none;
+    }
+    nav .button-collapse
+    {
+        margin: 0 0px;
+    }
+    nav i.material-icons
+    {
+        font-size: 18px;
+    }
+    nav .brand-logo
+    {
+        left: 50px;
+        transform: translate(0,0px)
+    }
+}
+@media only screen and (max-width: 250px)
+{
+    nav .brand-logo
+    {
+        left: 28px;
+        transform: translate(0,0px)
+    }
+}
+@media only screen and (max-width: 210px)
+{
+    nav .brand-logo
+    {
+        left: 28px; 
+        transform: translate(0,0px)
+    }
+    .brand-logo span.short
+    {
+        font-size: 24px; 
+        display: block;
+    }
+    .brand-logo span.full
+    {
+        display: none;
+    }
+}
