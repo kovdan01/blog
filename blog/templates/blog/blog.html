@@ -21,7 +21,7 @@
                 <div class="post-tags">
                   {{post.tags}}
                 </div>
-                {{ post.text|safe|truncatechars_html:1000 }}
+                {{ post.text|safe|truncatechars_html:400 }}
               </div>
             {% endfor %}
           </div>
