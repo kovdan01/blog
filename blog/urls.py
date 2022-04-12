@@ -1,11 +1,11 @@
-from django.conf.urls import url
+from django.urls import re_path
 from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^blog/(?P<pk>\d+)/$', views.post, name='post'),
-    url(r'^blog/$', views.blog, name='blog'),
-    url(r'^contact/$', views.contact, name='contact'),
-    url(r'^cv/$', views.cv, name='cv'),
+    re_path(r'^$', views.index, name='index'),
+    re_path(r'^blog/(?P<pk>\d+)/$', views.post, name='post'),
+    re_path(r'^blog/$', views.blog, name='blog'),
+    re_path(r'^contact/$', views.contact, name='contact'),
+    re_path(r'^cv/$', views.cv, name='cv'),
 ]
