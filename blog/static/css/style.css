@@ -1,4 +1,4 @@
-html 
+html
 {
     overflow-x: hidden;
     margin-right: calc(-1 * (100vw - 100%));
@@ -18,7 +18,7 @@ main
 {
     font-family: 'Roboto Slab', serif;
 }
-.list-inline 
+.list-inline
 {
     padding-left: 0px;
     padding-top: 5px;
@@ -27,7 +27,7 @@ main
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.list-inline > li 
+.list-inline > li
 {
     display: inline-block;
     padding-right: 5px;
@@ -105,7 +105,7 @@ footer li span
 {
     margin:0 auto;
     max-width:1000px;
-    width:90%
+    width:100%
 }
 @media only screen and (min-width: 601px)
 {
@@ -164,7 +164,7 @@ footer li span
 {
     .brand-logo span.full
     {
-        font-size: 36px; 
+        font-size: 36px;
         display: block;
     }
     .brand-logo span.short
@@ -184,7 +184,7 @@ footer li span
 {
     .brand-logo span.full
     {
-        font-size: 32px; 
+        font-size: 32px;
         display: block;
     }
     .brand-logo span.short
@@ -217,12 +217,12 @@ footer li span
 {
     nav .brand-logo
     {
-        left: 28px; 
+        left: 28px;
         transform: translate(0,0px)
     }
     .brand-logo span.short
     {
-        font-size: 24px; 
+        font-size: 24px;
         display: block;
     }
     .brand-logo span.full
