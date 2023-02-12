@@ -1,83 +1,99 @@
 <!doctype html>
 {% load static %}
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Spectral:300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Spectral:200&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icons/sign.svg' %}">
-    {% block head %}
-    <title>Даниил Ковалев</title>
-    {% endblock %}
-  </head>
-  <body>
-    <nav class="transparent">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="{% url 'index' %}" class="brand-logo grey-text text-darken-4">
-            <ul>
-              <li><img id="photo" src="{% static 'img/photo.png' %}"></li>
-              <li><span class="full"> Д.К.</span><span class="short"> Д.К.</span></li>
-            </ul>
-          </a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons grey-text text-darken-4">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{% url 'index' %}" class=" grey-text text-darken-4">Главная</a></li>
-            <li><a href="{% url 'cv' %}" class=" grey-text text-darken-4">Резюме</a></li>
-            <li><a href="{% url 'blog' %}" class=" grey-text text-darken-4">Блог</a></li>
-            <li><a href="{% url 'contact' %}" class=" grey-text text-darken-4">Контакты</a></li>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Spectral:300&amp;subset=latin,cyrillic" rel="stylesheet"
+    type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Spectral:200&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icons/sign.svg' %}">
+  {% block head %}
+  <title>Даниил Ковалев</title>
+  {% endblock %}
+</head>
+
+<body>
+  <nav class="transparent">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="{% url 'index' %}" class="brand-logo grey-text text-darken-4">
+          <ul>
+            <li><img id="photo" src="{% static 'img/photo.png' %}"></li>
+            <li><span class="full"> Д.К.</span><span class="short"> Д.К.</span></li>
           </ul>
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="{% url 'index' %}" class=" grey-text text-darken-4">Главная</a></li>
-            <li><a href="{% url 'cv' %}" class=" grey-text text-darken-4">Резюме</a></li>
-            <li><a href="{% url 'blog' %}" class=" grey-text text-darken-4">Блог</a></li>
-            <li><a href="{% url 'contact' %}" class=" grey-text text-darken-4">Контакты</a></li>
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+            class="material-icons grey-text text-darken-4">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'index' %}" class=" grey-text text-darken-4">Главная</a></li>
+          <li><a href="{% url 'cv' %}" class=" grey-text text-darken-4">Резюме</a></li>
+          <li><a href="{% url 'blog' %}" class=" grey-text text-darken-4">Блог</a></li>
+          <li><a href="{% url 'contact' %}" class=" grey-text text-darken-4">Контакты</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="{% url 'index' %}" class=" grey-text text-darken-4">Главная</a></li>
+          <li><a href="{% url 'cv' %}" class=" grey-text text-darken-4">Резюме</a></li>
+          <li><a href="{% url 'blog' %}" class=" grey-text text-darken-4">Блог</a></li>
+          <li><a href="{% url 'contact' %}" class=" grey-text text-darken-4">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+
+  <footer class="page-footer transparent z-depth-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="list-inline">
+            <li><a href="https://t.me/kovdan01" target="_blank" class="grey-text text-darken-4">
+                <img src="{% static 'img/icons/telegram.svg' %}" alt="" height="20px" width="20px">
+                <span>Telegram</span></a>
+            </li>
+            <li><a href="https://github.com/kovdan01" target="_blank" class="grey-text text-darken-4">
+                <img src="{% static 'img/icons/github.svg'%}" alt="" height="20px" width="20px"><span>GitHub</span></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/d-kovalev/" target="_blank" class="grey-text text-darken-4">
+                <img src="{% static 'img/icons/linkedin.svg' %}" alt="" height="20px" width="20px">
+                <span>LinkedIn</span></a>
+            </li>
+            <li><a href="mailto:daniil@kovalev.website" class="grey-text text-darken-4">
+                <i class="material-icons grey-text text-darken-4 footer-icons">email</i>
+                <span>daniil@kovalev.website</span></a>
+            </li>
           </ul>
         </div>
       </div>
-    </nav>
-
-    <main>
-      <div class="container">
-        {% block content %}
-        {% endblock %}
-      </div>
-    </main>
-
-    <footer class="page-footer transparent z-depth-5">
+    </div>
+    <div class="footer-copyright transparent grey-text text-darken-2">
       <div class="container">
         <div class="row">
           <div class="col">
-            <ul class="list-inline">
-              <li><a href="https://t.me/kovdan01" target="_blank" class=" grey-text text-darken-4"><img src="{% static 'img/icons/telegram.svg' %}" alt="" height="20px" width="20px"><span> Telegram</span></a></li>
-              <li><a href="https://github.com/kovdan01" target="_blank" class=" grey-text text-darken-4"><img src="{% static 'img/icons/github.svg' %}" alt="" height="20px" width="20px"><span> GitHub</span></a></li>
-              <li><a href="https://www.linkedin.com/in/d-kovalev/" target="_blank" class=" grey-text text-darken-4"><img src="{% static 'img/icons/linkedin.svg' %}" alt="" height="20px" width="20px"><span> LinkedIn</span></a></li>
-              <li><a href="mailto:daniil@kovalev.website" class=" grey-text text-darken-4"><i class="material-icons grey-text text-darken-4 footer-icons">email</i><span> daniil@kovalev.website</span></a></li>
-            </ul>
+            &copy; 2018 &#8211; 2022 Даниил Ковалев
           </div>
         </div>
       </div>
-      <div class="footer-copyright transparent grey-text text-darken-2">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              &copy; 2018 &#8211; 2022 Даниил Ковалев
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{% static 'js/sidenav.js' %}"></script>
-    {% block scripts %}
-    {% endblock %}
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{% static 'js/sidenav.js' %}"></script>
+  {% block scripts %}
+  {% endblock %}
+</body>
+
 </html>

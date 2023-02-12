@@ -1,32 +1,32 @@
 {% extends 'blog/base.html' %}
 {% block head %}
-    <title>Блог &#8211; Даниил Ковалев</title>
+<title>Блог &#8211; Даниил Ковалев</title>
 {% load static %}
-    <script type="text/javascript" src="{% static 'js/syntaxhighlighter.js' %}"></script>
-    <link type="text/css" rel="stylesheet" href="{% static 'css/syntaxhighlighter.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script type="text/javascript" src="{% static 'js/syntaxhighlighter.js' %}"></script>
+<link type="text/css" rel="stylesheet" href="{% static 'css/syntaxhighlighter.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
-        <div class="row">
-          <div class="col s12 m12 l12 xl12">
-            {% for post in posts reversed %}
-              <div class="card-panel hoverable post">
-                <div class="date">
-                  <p>Опубликовано: {{ post.published_date }}</p>
-                </div>
-                <h2>
-                  <a href="{% url 'post' pk=post.pk %}">{{ post.title }}</a>
-                </h2>
-                <div class="post-tags">
-                  {{post.tags}}
-                </div>
-                {{ post.text|safe|truncatechars_html:400 }}
-              </div>
-            {% endfor %}
-          </div>
-        </div>
+<div class="row">
+  <div class="col s12 m12 l12 xl12">
+    {% for post in posts reversed %}
+    <div class="card-panel hoverable post">
+      <div class="date">
+        <p>Опубликовано: {{ post.published_date }}</p>
+      </div>
+      <h2>
+        <a href="{% url 'post' pk=post.pk %}">{{ post.title }}</a>
+      </h2>
+      <div class="post-tags">
+        {{post.tags}}
+      </div>
+      {{ post.text|safe|truncatechars_html:400 }}
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
 {% block scripts %}
-    <script src="{% static 'js/post-tags.js' %}"></script>
+<script src="{% static 'js/post-tags.js' %}"></script>
 {% endblock %}
